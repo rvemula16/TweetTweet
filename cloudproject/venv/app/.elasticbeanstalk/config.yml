@@ -1,0 +1,13 @@
+branch-defaults:
+  default:
+    environment: tweet-env
+    group_suffix: null
+global:
+  application_name: tweet
+  branch: null
+  default_ec2_keyname: tweetkey
+  default_platform: python3.4
+  default_region: us-west-2
+  profile: null
+  repository: null
+  sc: null

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TweetMap</title>
+</head>
+
+<body bgcolor="#ffffff">
+    <table width="100%" height="460" align="center" valign="top" border="0" cellpadding="0" cellspacing="0">
+        <tr align="center" valign="center">
+            <h2>TweetMap</h2>
+        </tr>
+        <tr>
+            <td width="70%">
+                <div>
+                    <div style="float:left">
+                        <div id="googleMap" style="width:650px;height:400px;"></div>
+                        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAnA5a1D-duWGoxb4bKsLiSxwZ7ti1Fj-M&libraries=places&callback=initMap">
+                            "> < /
+                            div >
+                        </script>
+
+                        <script>
+                            var map;
+                            var myCenter = new google.maps.LatLng(40.7317, -73.9888);
+                            var mapProp;
+
+                            function initialize() {
+                                //alert("finalise");
+                                var mapProp = {
+                                    zoom: 1,
+                                    center: myCenter,
+                                    mapTypeId: google.maps.MapTypeId.HYBRID
+                                };
+
+                                map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                                loadMap();
+                            }
+
+                            google.maps.event.addDomListener(window, 'load', initialize);
+
+                            function loadMap() {
+                                //alert("loadmap");	
+
+                                var mapProp = {
+                                    zoom: 1,
+                                    center: myCenter,
+                                    mapTypeId: google.maps.MapTypeId.HYBRID
+                                };
+
+                                map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                                var coord = JSON.parse('{{result}}');
+
+                                var infowindow = new google.maps.InfoWindow();
+
+                                var marker;
+
+                                var result = coord.toString().split(',');
+                                for (var i = 0; i < result.length; i = i + 2) {
+                                    //alert(result[i]+","+result[i+1]);
+                                    var position = new google.maps.LatLng(result[i + 1], result[i]);
+
+
+                                    marker = new google.maps.Marker({
+                                        position: position,
+                                        map: map
+                                    });
+
+                                }
+
+                                marker.setMap(map);
+                            }
+                        </script>
+            </td>
+            <td width="30%">
+
+                <form name="test1" action="http://127.0.0.1:5000/" onsubmit="loadMap()" method='POST'>
+                    <p> <b>Select a keyword: </b></p>
+                    <input type="radio" name="option" value="Trump" /> Trump<br>
+                    <input type="radio" name="option" value="Clinton" /> Clinton <br>
+                    <input type="radio" name="option" value="Trump" /> Debate<br>
+                    <input type="radio" name="option" value="Clinton" /> Obama <br>
+                    <input type="radio" name="option" value="Trump" /> Technology<br>
+                    <input type="radio" name="option" value="Clinton" /> NBA <br>
+                    <input type="radio" name="option" value="Clinton" /> Movie <br>
+                    <input type="radio" name="option" value="Trump" /> Crime <br>
+                    <input type="radio" name="option" value="Clinton" /> ADHM <br>
+                    <input type="radio" name="option" value="Trump" /> Cricket<br>
+                    <input type="submit" />
+                </form>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</body>
