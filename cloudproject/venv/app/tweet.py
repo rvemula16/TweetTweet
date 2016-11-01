@@ -21,10 +21,10 @@ es = Elasticsearch()
 _log = logging.getLogger(__name__)
 
 # User credentials to access Twitter API
-access_token = '781950288466935808-A6LSuau4eB1xMmjmXNVsZXx7LsohNAF'
-access_token_secret = 'vcXgkbWaEwOM0IXiOB5nR2amb2pzMus3cwkYckeduEeLW'
-consumer_key = 'go4Qn9lTnefuHVSHh5MWdGzoQ'
-consumer_secret = 'wzqx2yZAWHrOnPWPmuyvSfkL0hoT7oEx1DMpp9T3wznq3VKamo'
+access_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+access_token_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+consumer_key='xxxxxxxxxxxxxxxx'
+consumer_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 i = [0]
 coord = []
 
