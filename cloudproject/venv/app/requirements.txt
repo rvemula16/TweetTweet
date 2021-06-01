@@ -40,7 +40,7 @@ semantic-version==2.5.0
 six==1.10.0
 texttable==0.8.6
 tweepy==3.5.0
-urllib3==1.18
+urllib3==1.26.5
 virtualenv==15.0.3
 websocket-client==0.37.0
 Werkzeug==0.11.11
